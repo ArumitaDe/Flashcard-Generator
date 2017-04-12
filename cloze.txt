@@ -1,1 +1,1 @@
-[{"question":"The largest planet in the solar system is jupiter","cloze":"jupiter"},{"question":"The moon is the only satellite of the earth.","cloze":"moon"}]
+[{"question":"Virtual memory uses swap space and RAM in a computer.","cloze":"RAM"},{"question":"An algorithms performance is determined by time and space complexity.","cloze":"time"},{"question":"BIOS stands for basic input output system","cloze":"basic input output system"},{"question":"The time complexity of binary search is O(log n) where the number of entries to search for is n. ","cloze":"O(log n)"}]

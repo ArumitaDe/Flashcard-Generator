@@ -1,5 +1,6 @@
 var fs = require("fs");
-//var UserSearch = require("./newUser.js");
+var ClozeCard = require("./ClozeCard.js");
+var BasicCard = require("./BasicCard.js");
 var arr=[];
 var flag=0;  
 var score =0;
@@ -64,30 +65,7 @@ function playBasicQuiz()
         console.log("Your score is "+score+" out of a total of "+ total);
     });
     }
-function ClozeCard(text,cloze) 
-    {
-    this.text = text;
-    this.cloze = cloze;
-    if((this.text).includes(this.cloze) )
-    {
-    arr.push(this);
-    this.clozeDelete = function() 
-    {
-    var clozeDeletedString=this.text.replace(this.cloze,'..........');
-    return clozeDeletedString;
-    };
-    }
-    else
-    {
-    return (this.cloze + " is not a part of the string '"+ this.text+"'");
-    }
-    };
-function BasicCard(front,back) 
-    {
-    this.front = front;
-    this.back = back;
-    arr.push(this);
-    };
+
 var Admin=function()
 {
     this.playClozeGame=function()
@@ -104,8 +82,8 @@ var Admin=function()
         data2=JSON.parse(data);   
         for (var i = 0; i < data2.length; i++) 
             {
-            
             var newquestion= new ClozeCard((data2[i].question),(data2[i].cloze));
+            arr.push(newquestion);
             }       
         playClozeQuiz();
         }
@@ -128,8 +106,8 @@ var Admin=function()
         data2=JSON.parse(data);  
         for (var i = 0; i < data2.length; i++) 
             {
-            
             var newquestion= new BasicCard((data2[i].front),(data2[i].back));
+            arr.push(newquestion);
             }       
         playBasicQuiz();
         }
